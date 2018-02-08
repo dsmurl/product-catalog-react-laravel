@@ -6,19 +6,23 @@ A simple product catalog.  Api written in Laravel and the front end written in R
 
 * Run the included mysql instance through docker with:
     * docker-compose up
-        * To clear the Db: rm -rf database/docker-mysql/*     
+        * To clear the Db: ``` cmd-line> rm -rf database/docker-mysql/*  ```  
+* Make the .env file
+    * ``` cmd-line> cp .env.example .env ```
+* Generate a new Laravel API_KEY in that .env file
+    * ``` cmd-line> php artisan key:generate ```
 * Run the Lavavel server with:
-    * php artisan serve
+    * ``` cmd-line> php artisan serve ```
 * Run the DB building script with:
-    * php artisan migrate
-* Check out the interface at:
+    * ``` cmd-line> php artisan migrate ```
+* Check out the browser interface at:
     * localhost:8000
     
 ## Other Fun Stuff
 * Optionally, you can create fake data with:
-    * php artisan db:seed --class=ProductsTableSeeder
+    * ``` cmd-line> php artisan db:seed --class=ProductsTableSeeder ```
 * Optionally, run the hot swap webpackDevServer for fast in-memory rebuild of react code after changes:
-    * In a separate term window run: npm run hot
+    * In a separate term window run: ``` cmd-line> npm run hot ```
   
   
 ## High Notes
