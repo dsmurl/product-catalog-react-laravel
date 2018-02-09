@@ -6,7 +6,7 @@ class Home extends React.Component {
         return (
             <div className="row">
                 <div className="col-xs-12 col-sm-12">
-                    <h2>You are home!</h2>
+                    <h2>You're home!</h2>
                     Enjoy and visit SamBagot.com for more fun.
                 </div>
             </div>
