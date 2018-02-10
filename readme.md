@@ -2,27 +2,39 @@
 
 A simple product catalog.  Api written in Laravel and the front end written in React.js.  There is a simple entry form for new products and a listing display view.  I'm happy with it cause I've never built a Laravel and React project before.
 
-## Running
 
-* Run the included mysql instance through docker with:
-    * docker-compose up
-        * To clear the Db: ``` cmd-line> rm -rf database/docker-mysql/*  ```  
-* Make the .env file
-    * ``` cmd-line> cp .env.example .env ```
-* Generate a new Laravel API_KEY in that .env file
-    * ``` cmd-line> php artisan key:generate ```
-* Run the Lavavel server with:
-    * ``` cmd-line> php artisan serve ```
-* Run the DB building script with:
-    * ``` cmd-line> php artisan migrate ```
-* Check out the browser interface at:
-    * localhost:8000
+## Running
+* Inside this projects git cloned dir:
+    * Install supporting packages on Linux like ``` sudo apt-get install php-mcrypt php-gd php-mbstring ```
+    * Install php & composer on linux like ``` sudo apt-get install php7.0 php7.0-cli phpunit php7.0-mysql composer ```
+    * Install the composer packages for this project ``` composer install ```
+    * Run the included mysql instance through docker with:
+        * Install docker and docker-compose as you wish
+        * ``` docker-compose up ```
+            * To clear the Db: ``` rm -rf database/docker-mysql/*  ```  
+    * Make the .env file
+        * ``` cp .env.example .env ```
+    * Generate a new Laravel API_KEY in that .env file
+        * ``` php artisan key:generate ```
+    * Generate the node_modules for the served javascript
+        * For some reason (node_modules/mozjpeg) on some Linux systems, to npm install you must ``` sudo apt-get install wget autoconf automake gcc nasm libtool ```
+        * Then ``` npm install ```    
+    * Build the javascript and css to be served out with ``` npm run dev ```
+    * Run the Lavavel server with:
+        * ``` php artisan serve ```
+    * Run the DB building script with:
+        * ``` php artisan migrate ```
+    * Check out the browser interface at:
+        * localhost:8000
+    * Check out the api interface at:
+        * localhost:8000/api/products
+    
     
 ## Other Fun Stuff
 * Optionally, you can create fake data with:
-    * ``` cmd-line> php artisan db:seed --class=ProductsTableSeeder ```
+    * ``` php artisan db:seed --class=ProductsTableSeeder ```
 * Optionally, run the hot swap webpackDevServer for fast in-memory rebuild of react code after changes:
-    * In a separate term window run: ``` cmd-line> npm run hot ```
+    * In a separate term window run: ``` npm run hot ```
   
   
 ## High Notes
@@ -38,6 +50,7 @@ A simple product catalog.  Api written in Laravel and the front end written in R
     * Item titles must be unique and submitting a duplicate will show the server side error message
     * Error message isn't friendly, but still
 
+
 ## Nice Trys
 * Tried to add redux-form but didn't have time
 * Tried to add immutable to protect redux store but couldn't iron it out fast enough
@@ -47,6 +60,7 @@ A simple product catalog.  Api written in Laravel and the front end written in R
 * I got pretty far with the css, but obviously could have gone a lot further
 * I wanted to get reselect working but couldn't for some reason
 * There is some confusion between controlled and uncontrolled inputs on the form that makes the values of the form after submit weird after submit, but I didn't have time to make nice controlled component inputs
+
 
 ## Credits
 * Got help from: https://code.tutsplus.com/tutorials/build-a-react-app-with-laravel-restful-backend-part-1-laravel-5-api--cms-29442

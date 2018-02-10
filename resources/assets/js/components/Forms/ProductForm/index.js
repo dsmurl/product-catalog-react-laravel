@@ -98,7 +98,7 @@ class ProductForm extends React.Component {
                 <div className="row">
                     <div className="col-xs-3"></div>
                     <div className="col-xs-3">
-                        <input value="Send Request" type="button" onClick={this.handleSubmit}/>
+                        <input value="Add Product!" type="button" onClick={this.handleSubmit}/>
                     </div>
                 </div>
                 {this.renderError()}
